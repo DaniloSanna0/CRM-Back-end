@@ -1,0 +1,7 @@
+package CRM.entity;
+
+public class Prodotti {
+	
+	MONITOR,COMUPTER,CUFFIE,TV,MICROFONO
+
+}

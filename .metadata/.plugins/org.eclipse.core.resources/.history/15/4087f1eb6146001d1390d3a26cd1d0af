@@ -1,0 +1,19 @@
+package CRM.entity;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Prodotti {
+	
+	private long id;
+	private String nome;
+	private int prezzo;
+
+}

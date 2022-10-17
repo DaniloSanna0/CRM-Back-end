@@ -1,0 +1,17 @@
+package CRM.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.ManyToOne;
+
+public class Fattura {
+
+	private LocalDate dataEmissione;
+	private String numeroFattura;
+	private String IVA;
+	private boolean pagata;
+	@ManyToOne
+	private Clienti clienteId;
+	private Prodotti prodotti;
+	
+}

@@ -1,0 +1,6 @@
+package CRM.entity;
+
+public enum Prodotti {
+
+	MONITOR,COMUPTER,CUFFIE,TV,MICROFONO
+}

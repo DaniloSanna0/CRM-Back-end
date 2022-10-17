@@ -1,0 +1,42 @@
+package CRM.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import CRM.entity.Clienti;
+import CRM.repository.ClientiRepository;
+
+public class ClientiService {
+
+	@Autowired
+	private ClientiRepository clientiRepository;
+
+	public List<Clienti> trovaTutti() {
+		return (List<Clienti>) clientiRepository.findAll();
+	}
+
+	@Override
+	public Appuntamenti trovaPerId(Long id) {
+		return appuntamentiRepository.findById(id).get();
+	}
+
+	@Override
+	public void cancella(Long id) {
+		appuntamentiRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public void crea(Appuntamenti appuntamenti) {
+		appuntamentiRepository.save(appuntamenti);
+		
+	}
+
+	@Override
+	public void modifica(Appuntamenti appuntamenti) {
+		appuntamentiRepository.save(appuntamenti);
+				
+	}
+	
+}

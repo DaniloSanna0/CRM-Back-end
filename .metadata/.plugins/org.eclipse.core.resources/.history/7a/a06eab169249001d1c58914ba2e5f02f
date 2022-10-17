@@ -1,0 +1,47 @@
+package CRM.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import CRM.entity.Appuntamenti;
+import CRM.repository.AppuntamentiRepository;
+
+@Service
+public class AppuntamentiService implements GestioneService{
+	
+	@Autowired
+	private AppuntamentiRepository appuntamentiRepository;
+
+	@Override
+	public List<Appuntamenti> trovaTutti() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Appuntamenti trovaPerId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void cancella(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void crea(Appuntamenti appuntamenti) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modifica(Appuntamenti appuntamenti) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package CRM.entity;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Indirizzo {
+
+      private int id;
+	  private String via;
+	  private String citta;
+	  private int cap;
+	  private int civico;
+	  
+}

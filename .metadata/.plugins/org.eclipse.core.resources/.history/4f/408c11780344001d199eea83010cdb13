@@ -1,0 +1,12 @@
+package CRM.entity;
+
+import java.time.LocalDate;
+
+public class Fattura {
+
+	private LocalDate dataEmissione;
+	private String numeroFattura;
+	private String IVA;
+	private boolean pagata;
+	
+}

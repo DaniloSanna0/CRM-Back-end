@@ -1,0 +1,10 @@
+package CRM.entity;
+
+public interface Indirizzo {
+	
+	public String via;
+	public String citta;
+	public int cap;
+	public int civico;
+
+}

@@ -1,0 +1,19 @@
+package CRM.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+import CRM.entity.Clienti;
+import CRM.entity.Utenti;
+
+
+public interface UtentiRepository extends CrudRepository<Utenti, Long>  {
+
+    public Optional<Utenti> findById(Long id);
+	
+	public Optional<Utenti> findByNome(String nome);
+	
+	public boolean existsByTitolo(String nome);
+
+}

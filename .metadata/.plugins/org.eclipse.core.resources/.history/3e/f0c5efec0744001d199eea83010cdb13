@@ -1,0 +1,9 @@
+package CRM.entity;
+
+public interface Prodotti {
+
+	public long id = 1 ;
+	public String nome = "TV";
+	public long prezzo = 450;
+	
+}

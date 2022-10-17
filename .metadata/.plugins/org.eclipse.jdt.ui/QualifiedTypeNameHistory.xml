@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="CRM.service.ClientiService"/>
+    <fullyQualifiedTypeName name="CRM.service.FatturaService"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="CRM.entity.Clienti"/>
+    <fullyQualifiedTypeName name="CRM.entity.Appuntamenti"/>
+    <fullyQualifiedTypeName name="CRM.entity.Fattura"/>
+    <fullyQualifiedTypeName name="CRM.auth.users.UserDetailsServiceImpl"/>
+    <fullyQualifiedTypeName name="CRM.auth.AuthEntryPointJwt"/>
+    <fullyQualifiedTypeName name="CRM.auth.AuthTokenFilter"/>
+    <fullyQualifiedTypeName name="CRM.auth.users.UserService"/>
+    <fullyQualifiedTypeName name="CRM.auth.users.UserResponse"/>
+    <fullyQualifiedTypeName name="CRM.auth.jwt.JwtUtils"/>
+    <fullyQualifiedTypeName name="CRM.auth.users.UserDetailsImpl"/>
+    <fullyQualifiedTypeName name="CRM.auth.jwt.JwtResponse"/>
+    <fullyQualifiedTypeName name="CRM.auth.roles.Role"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,26 @@
+package CRM.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Clienti {
+	
+	private long id;
+	private String nome;
+	private String cognome;
+	private String password;
+	private String email;
+	private LocalDate data;
+	private long PIva;
+	private Indirizzo indirizzo;
+
+}
