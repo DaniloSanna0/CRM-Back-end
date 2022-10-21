@@ -1,9 +1,10 @@
 package CRM.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +30,7 @@ public class Fattura {
 	private boolean pagata;
 	@ManyToOne
 	private Clienti cliente;
-	private Prodotti prodotti;
+	@OneToMany
+	private List<Prodotti> prodotti;
 	
 }

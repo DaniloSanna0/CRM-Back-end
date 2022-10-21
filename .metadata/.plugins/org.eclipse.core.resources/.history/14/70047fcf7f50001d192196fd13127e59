@@ -1,0 +1,22 @@
+package CRM;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import CRM.entity.Clienti;
+
+@SpringBootApplication
+public class CrmApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CrmApplication.class, args);
+		Clienti c = new Clienti();
+		c.setCognome("ciao");
+		c.setNome("cddso");
+//		c.setId(2);
+		c.setEmail("dsdf");
+		c.setCognome("gfas");
+		
+	}
+
+}

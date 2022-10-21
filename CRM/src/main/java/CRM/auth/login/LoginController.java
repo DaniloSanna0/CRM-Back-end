@@ -59,4 +59,11 @@ public class LoginController {
 		return ResponseEntity.ok(jwtresp);
 		
 	}
+	
+//	@PostMapping("/register")
+//	public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request){
+		//creare utenti con dati, usare user repository
+		//return della response entity
+		//
+	//}
 }

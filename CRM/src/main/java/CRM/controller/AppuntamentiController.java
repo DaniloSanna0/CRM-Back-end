@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +22,10 @@ import CRM.service.GestioneService;
 
 @RestController
 @RequestMapping("/appuntamenti")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AppuntamentiController {
 	
 	@Autowired
-	@Qualifier("AppuntamentiServiceV1")
 	private GestioneService appuntamentiService;
 	
 	@GetMapping
@@ -38,7 +39,7 @@ public class AppuntamentiController {
 	}
 	
 	@GetMapping("/bytitolo/{idTitolo}")
-	public  List<Appuntamenti> trovaPerAutore(Long idTitolo) {
+	public  List<Appuntamenti> trovaPerAutore(@PathVariable Long idTitolo) {
 		return appuntamentiService.trovaTutti();
 	}
 	

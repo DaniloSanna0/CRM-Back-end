@@ -15,6 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
 
 import CRM.auth.AuthEntryPointJwt;
 import CRM.auth.AuthTokenFilter;
@@ -56,8 +57,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		log.trace("configure(AuthenticationManagerBuilder authenticationManagerBuilder)");
 		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		 
+		
 	}
 
+//	@Override
+//	public void configure(HttpSecurity http) throws Exception{
+//		http.cors().configurationSource(r -> new CorsConfiguration().applyPermitDefaultValues());
+//	} 
+	
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {

@@ -1,9 +1,0 @@
-package CRM.repository;
-
-import org.springframework.data.repository.CrudRepository;
-
-import CRM.entity.Prodotti;
-
-public interface ProdottiRepository extends CrudRepository<Prodotti, Long>   {
-
-}

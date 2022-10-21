@@ -3,10 +3,11 @@ package CRM.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import CRM.entity.Utenti;
 import CRM.repository.UtentiRepository;
-
+@Service
 public class UtentiService {
 	
 	@Autowired
