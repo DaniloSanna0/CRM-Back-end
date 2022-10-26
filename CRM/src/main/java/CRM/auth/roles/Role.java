@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Bean;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,4 +37,11 @@ public class Role {
 		return roleName;
 	}
 	
+//	@Bean(name = "")
+//	public Role getRoleUser() {
+//		Role r = new Role();
+//		r.setRoleName(ERole.ROLE_USER);
+//		
+//		return r;
+//	}
 }

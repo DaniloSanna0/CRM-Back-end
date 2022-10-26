@@ -3,6 +3,7 @@ package CRM.auth.users;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -50,7 +51,6 @@ public class User {
 	
 	private String cognome;
 	private String email;
-	private LocalDate data;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -77,6 +77,10 @@ public class User {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public void setRoles(HashSet<Role> role) {
+		this.roles = role;
 	}
 
 }

@@ -1,0 +1,5 @@
+package CRM.auth;
+
+public class UserAlreadyExistException extends Exception {
+
+}

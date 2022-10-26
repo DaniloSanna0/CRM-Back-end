@@ -14,30 +14,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import CRM.entity.Utenti;
-import CRM.service.UtentiService;
-
+import CRM.auth.users.User;
+import CRM.auth.users.UserService;
 
 @RestController
-@RequestMapping("/utenti")
+@RequestMapping("/users")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UtentiController {
 
 	@Autowired
-	private UtentiService utentiService;
+	private UserService utentiService;
 	
 	@GetMapping
-	public List<Utenti> trovaTutti() {
+	public List<User> trovaTutti() {
 		return utentiService.trovaTutti();
 	}
 	
 	@GetMapping("/{id}")
-	public Utenti trovaPerId(@PathVariable Long id) {
+	public User trovaPerId(@PathVariable Long id) {
 		return utentiService.trovaPerId(id);
 	}
 	
 	@GetMapping("/bynome/{idNome}")
-	public  List<Utenti> trovaPerNome(@PathVariable Long idNome) {
+	public  List<User> trovaPerNome(@PathVariable Long idNome) {
 		return utentiService.trovaTutti();
 	}
 	
@@ -47,12 +46,12 @@ public class UtentiController {
 	}
 	
 	@PostMapping
-	public void crea(@RequestBody Utenti utente) {
+	public void crea(@RequestBody User utente) {
 		utentiService.crea(utente);
 	}
 	
 	@PutMapping
-	public void modifica(@RequestBody Utenti utente) {
+	public void modifica(@RequestBody User utente) {
 		utentiService.modifica(utente);
 	}
 }

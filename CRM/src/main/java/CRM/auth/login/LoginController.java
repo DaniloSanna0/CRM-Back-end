@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import CRM.auth.UserAlreadyExistException;
 import CRM.auth.jwt.JwtResponse;
 import CRM.auth.jwt.JwtUtils;
 import CRM.auth.users.UserDetailsImpl;
+import CRM.auth.users.UserService;
 
 
 
@@ -60,10 +63,18 @@ public class LoginController {
 		
 	}
 	
-//	@PostMapping("/register")
-//	public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request){
-		//creare utenti con dati, usare user repository
-		//return della response entity
-		//
-	//}
+	@Autowired
+	UserService userService;
+	
+	@PostMapping("/register")
+	public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request){
+		try {
+		userService.registra(request);
+		}
+		catch(UserAlreadyExistException e){
+			ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE);
+		}
+	return ResponseEntity.ok("utente creato");	
+	}
+
 }

@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import CRM.entity.Utenti;
-import CRM.repository.UtentiRepository;
+import CRM.auth.users.User;
+import CRM.auth.users.UserRepository;
 @Service
 public class UtentiService {
 	
 	@Autowired
-	private UtentiRepository utentiRepository;
+	private UserRepository utentiRepository;
 
-	public List<Utenti> trovaTutti() {
-		return (List<Utenti>) utentiRepository.findAll();
+	public List<User> trovaTutti() {
+		return (List<User>) utentiRepository.findAll();
 	}
 
 	
-	public Utenti trovaPerId(Long id) {
+	public User trovaPerId(Long id) {
 		return utentiRepository.findById(id).get();
 	}
 
@@ -29,13 +29,13 @@ public class UtentiService {
 	}
 
 	
-	public void crea(Utenti utenti) {
+	public void crea(User utenti) {
 		utentiRepository.save(utenti);
 		
 	}
 
 	
-	public void modifica(Utenti utenti) {
+	public void modifica(User utenti) {
 		utentiRepository.save(utenti);
 				
 	}

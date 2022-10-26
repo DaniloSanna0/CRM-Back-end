@@ -3,15 +3,16 @@ package CRM.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import CRM.entity.Utenti;
+import CRM.auth.users.User;
+
 
 @Repository
-public interface UtentiRepository extends CrudRepository<Utenti, Long> {
+public interface UtentiRepository extends CrudRepository<User, Long> {
 
-public Utenti findByNome(String nome);
+public User findByUsername(String username);
 	
-	public Utenti findByNomeAndCognome(String nome, String cognome);
+	public User findByUsernameAndCognome(String username, String cognome);
 	
 
-	public boolean existsByNome(String nome);
+	public boolean existsByUsername(String username);
 }

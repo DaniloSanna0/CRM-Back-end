@@ -1,5 +1,0 @@
-package CRM.repository;
-
-public interface AppuntamentiRepository {
-
-}
