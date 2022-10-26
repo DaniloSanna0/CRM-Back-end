@@ -1,0 +1,13 @@
+package CRM.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import CRM.entity.Prodotti;
+
+public interface ProdottiRepository extends CrudRepository<Prodotti, Long>   {
+    public Prodotti findByNome(String nome);
+	
+
+	public boolean existsByNome(String nome);
+
+}

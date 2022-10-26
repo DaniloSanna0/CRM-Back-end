@@ -1,0 +1,45 @@
+package CRM.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import CRM.entity.Prodotti;
+import CRM.repository.ProdottiRepository;
+
+@Service
+public class ProdottiService {
+
+	@Autowired
+	private ProdottiRepository fatturaRepository;
+
+	public List<Prodotti> trovaTutti() {
+		return (List<Prodotti>) fatturaRepository.findAll();
+	}
+
+	
+	public Prodotti trovaPerId(Long id) {
+		return fatturaRepository.findById(id).get();
+	}
+
+	
+	public void cancella(Long id) {
+		fatturaRepository.deleteById(id);
+		
+	}
+
+	
+	public void crea(Prodotti fattura) {
+		fatturaRepository.save(fattura);
+		
+	}
+
+	
+	public void modifica(Prodotti fattura) {
+		fatturaRepository.save(fattura);
+				
+	}
+	
+
+}
