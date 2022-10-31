@@ -1,6 +1,5 @@
 package CRM.auth.login;
 
-import java.time.LocalDate;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +18,4 @@ public class RegisterRequest {
 	
 	private String cognome;
 	private String email;
-	private LocalDate data;
 }

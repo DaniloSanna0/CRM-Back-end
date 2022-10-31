@@ -35,8 +35,8 @@ public class ClientiController {
 		return clientiService.trovaPerId(id);
 	}
 	
-	@GetMapping("/bynome/{idNome}")
-	public  List<Clienti> trovaPerNome(@PathVariable Long idNome) {
+	@GetMapping("/byuserName/{idUserName}")
+	public  List<Clienti> trovaPerUserName(@PathVariable Long idUserName) {
 		return clientiService.trovaTutti();
 	}
 	

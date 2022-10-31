@@ -74,6 +74,8 @@ public class LoginController {
 		catch(UserAlreadyExistException e){
 			ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE);
 		}
+		
+		
 	return ResponseEntity.ok("utente creato");	
 	}
 

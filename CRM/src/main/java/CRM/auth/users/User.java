@@ -42,7 +42,7 @@ public class User {
 
 	@NotBlank
 	@Size(max = 20)
-	private String username;
+	private String userName;
 
 
 	@NotBlank
@@ -56,10 +56,10 @@ public class User {
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<Role>();
 	
-	public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 120) String password) {
+	public User(Long id, @NotBlank @Size(max = 20) String userName, @NotBlank @Size(max = 120) String password) {
 		super();
 		this.id = id;
-		this.username = username;
+		this.userName = userName;
 		this.password = password;
 	}
 
@@ -71,8 +71,8 @@ public class User {
 		return id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
 	public String getPassword() {
@@ -82,5 +82,9 @@ public class User {
 	public void setRoles(HashSet<Role> role) {
 		this.roles = role;
 	}
+	
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 
 }

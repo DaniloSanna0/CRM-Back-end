@@ -8,10 +8,10 @@ import CRM.entity.Clienti;
 @Repository
 public interface ClientiRepository extends CrudRepository<Clienti, Long> {
 
-	public Clienti findByNome(String nome);
+	public Clienti findByUserName(String userName);
 	
-	public Clienti findByNomeAndCognome(String nome, String cognome);
+	public Clienti findByUserNameAndCognome(String userName, String cognome);
 	
 
-	public boolean existsByNome(String nome);
+	public boolean existsByUserName(String userName);
 }

@@ -35,8 +35,8 @@ public class UtentiController {
 		return utentiService.trovaPerId(id);
 	}
 	
-	@GetMapping("/bynome/{idNome}")
-	public  List<User> trovaPerNome(@PathVariable Long idNome) {
+	@GetMapping("/byuserName/{idUserName}")
+	public  List<User> trovaPerUserName(@PathVariable Long idUserName) {
 		return utentiService.trovaTutti();
 	}
 	

@@ -23,7 +23,7 @@ public class Clienti {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String nome;
+	private String userName;
 	private String cognome;
 	private String password;
 	private String email;

@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import CRM.auth.UserAlreadyExistException;
@@ -23,6 +24,9 @@ public class UserService {
 	@Autowired UserRepository userRepository;
 	
 	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
 	RoleRepository roleRepository;
 	
 	public List<UserResponse> getAllUsersBasicInformations() {
@@ -31,14 +35,14 @@ public class UserService {
 				.stream()
 				.map( user ->  UserResponse
 								.builder()
-								.userName(  user.getUsername()  )
+								.userName(  user.getUserName()  )
 								.role( user.getRoles().stream().findFirst().get().getRoleName().name() )
 								.build()   
 				).collect(Collectors.toList());
 	}
 	
 	public UserResponse getUserBasicInformations(String userName) {
-		User user = userRepository.findByUsername(userName).get();
+		User user = userRepository.findByUserName(userName).get();
 		
 		System.out.println(user);
 		
@@ -80,17 +84,17 @@ public class UserService {
 	
 	public void registra(RegisterRequest register) {
 		Boolean checkEmail = userRepository.existsByEmail(register.getEmail());
-		Boolean checkUsername = userRepository.existsByUsername(register.getUserName());
+		Boolean checkUsername = userRepository.existsByUserName(register.getUserName());
 		if(checkEmail || checkUsername) {
 			throw new UserAlreadyExistException();
 		}
 		User u = new User();
-		u.setUsername(register.getUserName());
-		u.setPassword(register.getPassword());
+		u.setUserName(register.getUserName());
+		u.setPassword(passwordEncoder.encode(register.getPassword()));
 		u.setCognome(register.getCognome());
 		u.setEmail(register.getEmail());
 		Role r = roleRepository.findByRoleName(ERole.ROLE_USER);
-		u.setRoles(new HashSet<Role>() {{add(r);}});
+	    u.addRole(r);
 		
 		userRepository.save(u);
 		
